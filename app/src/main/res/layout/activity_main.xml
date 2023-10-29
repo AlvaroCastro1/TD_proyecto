@@ -18,7 +18,8 @@
             android:layout_x="30dp"
             android:layout_y="24dp"
             android:hint="Ingrese el número binario (1 o 0)"
-            android:inputType="number" />
+            android:inputType="number"
+            android:digits="01" />/>
 
         <Button
             android:id="@+id/drawLineButton"
