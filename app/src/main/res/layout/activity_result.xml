@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,8 +16,36 @@
         android:text="Número ingresado: "
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NRZL" />
+
     <com.example.td_proyecto.DrawingView
         android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="92dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NRZI" />
+
+    <com.example.td_proyecto.DrawingView2
+        android:id="@+id/drawingView2"
+        android:layout_width="match_parent"
+        android:layout_height="92dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MANCHESTER" />
+
+    <com.example.td_proyecto.DrawingView3
+        android:id="@+id/drawingView3"
         android:layout_width="match_parent"
         android:layout_height="92dp" />
 

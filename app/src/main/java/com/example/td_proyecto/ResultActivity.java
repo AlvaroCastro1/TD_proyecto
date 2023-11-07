@@ -78,13 +78,20 @@ public class ResultActivity extends AppCompatActivity {
 
         // Encontrar el elemento y forzar el redibujado
         DrawingView drawingView = findViewById(R.id.drawingView);
+        DrawingView2 drawingView2 = findViewById(R.id.drawingView2);
+        DrawingView3 drawingView3 = findViewById(R.id.drawingView3);
         drawingView.set_numero(numero);
+        drawingView2.set_numero(numero);
+        drawingView3.set_numero(numero);
         int ancho = obtenerAnchoPantalla();
         //String mensaje = "len: " + numero.length();
         //Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
 
-
         drawingView.set_largoView(ancho);
+        drawingView2.set_largoView(ancho);
+        drawingView3.set_largoView(ancho);
         drawingView.invalidate();
+        drawingView2.invalidate();
+        drawingView3.invalidate();
     }
 }
