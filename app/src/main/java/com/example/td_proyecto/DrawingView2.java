@@ -42,22 +42,34 @@ public class DrawingView2 extends View {
         Toast.makeText(this.getContext(), mensaje, Toast.LENGTH_LONG).show();
 
         int y = 60; // Comenzamos en la posición baja
+        int prev_y = y;
+        int prev_fin_x = 0;
+
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);
             int fin_x = inicio_x + largoLinea; // Calcular el extremo de la línea
-            color1(i); // generar color intercalado
+            color(i); // generar color intercalado
 
-                if (bit.equals("1")) {
-            // Para un "1", invertimos el nivel del bit
-                   y = (y == 60) ? 10 : 60;
-               }
+            if (bit.equals("1")) {
+                // Para un "1", invertimos el nivel del bit
+                y = (y == 60) ? 10 : 60;
+            }
+
             // Dibujamos la línea en el nivel del bit actual
-               canvas.drawLine(inicio_x, y, fin_x, y, paint);
-               inicio_x = fin_x;
+            canvas.drawLine(inicio_x, y, fin_x, y, paint);
+
+            // Dibujamos una línea vertical para conectar las líneas horizontales
+            if (i != 0 && prev_y != y) {
+                canvas.drawLine(prev_fin_x, prev_y, prev_fin_x, y, paint);
+            }
+
+            inicio_x = fin_x;
+            prev_fin_x = fin_x;
+            prev_y = y;
         }
     }
 
-    public void color1(int i) {
+    public void color(int i) {
         if (i%2==0) {
             paint.setColor(getResources().getColor(android.R.color.holo_green_dark));
         } else {

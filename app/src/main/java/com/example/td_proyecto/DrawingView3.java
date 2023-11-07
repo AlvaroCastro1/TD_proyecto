@@ -43,19 +43,23 @@ public class DrawingView3 extends View {
 
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);
+            int medio_x = inicio_x + largoLinea; // Calcular el medio del intervalo de bit
             int fin_x = inicio_x + largoLinea; // Calcular el extremo de la línea
             color(i); // generar color intercalado
 
             if (bit.equals("1")) {
                 canvas.drawLine(inicio_x, 10, fin_x, 10, paint); // Primera mitad del bit
+                canvas.drawLine(medio_x, 10, medio_x, 60, paint); // Transición de alto a bajo
                 canvas.drawLine(fin_x, 60, fin_x + largoLinea, 60, paint); // Segunda mitad del bit
             } else {
                 canvas.drawLine(inicio_x, 60, fin_x, 60, paint); // Primera mitad del bit
+                canvas.drawLine(medio_x, 60, medio_x, 10, paint); // Transición de bajo a alto
                 canvas.drawLine(fin_x, 10, fin_x + largoLinea, 10, paint); // Segunda mitad del bit
             }
             inicio_x = fin_x + largoLinea; // Ajustar el inicio para el siguiente bit
         }
     }
+
 
     public void color(int i) {
         if (i%2==0) {

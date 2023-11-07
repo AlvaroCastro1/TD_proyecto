@@ -45,19 +45,24 @@ public class DrawingView extends View {
 
         String mensaje = "Bits: " + numero.length() ;
         Toast.makeText(this.getContext(), mensaje, Toast.LENGTH_LONG).show();
+        int prev_fin_x = 0;
+        int prev_y = 0;
 
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);
             int fin_x = inicio_x + largoLinea; // Calcular el extremo de la línea
             color(i); // generar color intercalado
+            int y = bit.equals("1") ? 60 : 10;
 
-
-            if (bit.equals("1")) {
-                canvas.drawLine(inicio_x, 10, fin_x, 10, paint);
-            } else {
-                canvas.drawLine(inicio_x, 60, fin_x, 60, paint);
+            if (i != 0) {
+                canvas.drawLine(prev_fin_x, prev_y, inicio_x, y, paint);
             }
+
+            canvas.drawLine(inicio_x, y, fin_x, y, paint);
+
             inicio_x = fin_x;
+            prev_fin_x = fin_x;
+            prev_y = y;
         }
     }
 
