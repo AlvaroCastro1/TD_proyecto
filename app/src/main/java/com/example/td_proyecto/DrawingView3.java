@@ -40,7 +40,7 @@ public class DrawingView3 extends View {
 
         String mensaje = "Bits: " + numero.length();
         Toast.makeText(this.getContext(), mensaje, Toast.LENGTH_LONG).show();
-
+        String bit_anterior = null;
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);
             int medio_x = inicio_x + largoLinea; // Calcular el medio del intervalo de bit
@@ -56,7 +56,13 @@ public class DrawingView3 extends View {
                 canvas.drawLine(medio_x, 60, medio_x, 10, paint); // Transición de bajo a alto
                 canvas.drawLine(fin_x, 10, fin_x + largoLinea, 10, paint); // Segunda mitad del bit
             }
+            if (bit_anterior!=null && bit_anterior.equals(bit)){
+                paint.setColor(getResources().getColor(android.R.color.holo_blue_light));
+                canvas.drawLine(inicio_x, 10, inicio_x, 60, paint); // conexion entre bits iguales
+                //canvas.drawLine(inicio_x, 10, fin_x + largoLinea, 60, paint);
+            }
             inicio_x = fin_x + largoLinea; // Ajustar el inicio para el siguiente bit
+            bit_anterior= bit;
         }
     }
 
