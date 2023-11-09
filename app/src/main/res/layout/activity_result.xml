@@ -1,54 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/white"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Número ingresado: "
-        android:textSize="18sp" />
+<TextView
+android:id="@+id/resultTextView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Número ingresado: "
+android:textSize="18sp"
+android:layout_gravity="center_horizontal"
+android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NRZL" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="NRZL"
+android:textSize="20sp"
+android:gravity="center"
+android:textColor="@color/black"
+    android:fontFamily="@font/agbalumo"/>
 
-    <com.example.td_proyecto.DrawingView
-        android:id="@+id/drawingView"
-        android:layout_width="match_parent"
-        android:layout_height="92dp" />
+<com.example.td_proyecto.DrawingView
+android:id="@+id/drawingView"
+android:layout_width="match_parent"
+android:layout_height="143dp"
+android:background="@android:color/white"
+    android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NRZI" />
+<TextView
+android:id="@+id/textView2"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="NRZI"
+android:textSize="20sp"
+android:gravity="center"
+android:textColor="@color/black"
+android:fontFamily="@font/agbalumo"
+android:layout_marginTop="16dp"/>
 
-    <com.example.td_proyecto.DrawingView2
-        android:id="@+id/drawingView2"
-        android:layout_width="match_parent"
-        android:layout_height="92dp" />
+<com.example.td_proyecto.DrawingView2
+android:id="@+id/drawingView2"
+android:layout_width="match_parent"
+android:layout_height="143dp"
+android:background="@android:color/white"
+android:layout_marginTop="8dp" />
 
-    <TextView
+        <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MANCHESTER" />
+        android:text="MANCHESTER"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/agbalumo"
+        android:layout_marginTop="16dp"  />
 
-    <com.example.td_proyecto.DrawingView3
+        <com.example.td_proyecto.DrawingView3
         android:id="@+id/drawingView3"
         android:layout_width="match_parent"
-        android:layout_height="92dp" />
-
-
+        android:layout_height="143dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>
-
