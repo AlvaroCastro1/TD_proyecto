@@ -28,8 +28,11 @@ public class DrawingView3 extends View {
     }
 
     public int calcular_largo(){
-        return (int) 1080 / 20;
-        //return (int) largo_view / numero.length();
+        int maxCaracteres = 20; //Maximo de caracteres al ingresar
+        return getWidth() / Math.min(numero.length(),maxCaracteres);
+        //getWidth Busca y devuelve el ancho de la linea
+        //Se devolvera la longitud de numero.length() si es menor o igual a 20
+        //Si el numero es igual a maxCaracteres se retorna
     }
 
     protected void onDraw(Canvas canvas) {
@@ -69,7 +72,7 @@ public class DrawingView3 extends View {
 
     public void color(int i) {
         if (i%2==0) {
-            paint.setColor(getResources().getColor(android.R.color.holo_blue_bright));
+            paint.setColor(getResources().getColor(android.R.color.holo_blue_dark));
         } else {
             paint.setColor(getResources().getColor(android.R.color.holo_blue_bright));
         }
