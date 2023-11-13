@@ -2,6 +2,7 @@ package com.example.td_proyecto;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -41,9 +42,15 @@ public class DrawingView3 extends View {
         int largoLinea = calcular_largo() / 2; // Dividir por 2 para la codificación de Manchester
         paint.setStrokeWidth(10);
 
-        String mensaje = "Bits: " + numero.length();
-        Toast.makeText(this.getContext(), mensaje, Toast.LENGTH_LONG).show();
         String bit_anterior = null;
+        paint.setColor(Color.argb(16,0,0,0));
+        for (int i = 0; i < getWidth(); i += largoLinea) {
+            canvas.drawLine(i, 0, i, getHeight(), paint);
+        }
+        for (int i = 0; i < getHeight(); i += 60) {
+            canvas.drawLine(0, i, getWidth(), i, paint);
+        }
+
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);
             int medio_x = inicio_x + largoLinea; // Calcular el medio del intervalo de bit

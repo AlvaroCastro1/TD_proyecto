@@ -2,6 +2,7 @@ package com.example.td_proyecto;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -41,12 +42,17 @@ public class DrawingView2 extends View {
         int largoLinea = calcular_largo();
         paint.setStrokeWidth(10);
 
-        String mensaje = "Bits: " + numero.length() ;
-        Toast.makeText(this.getContext(), mensaje, Toast.LENGTH_LONG).show();
-
         int y = 60; // Comenzamos en la posición baja
         int prev_y = y;
         int prev_fin_x = 0;
+
+        paint.setColor(Color.argb(16,0,0,0));
+        for (int i = 0; i < getWidth(); i += largoLinea) {
+            canvas.drawLine(i, 0, i, getHeight(), paint);
+        }
+        for (int i = 0; i < getHeight(); i += 60) {
+            canvas.drawLine(0, i, getWidth(), i, paint);
+        }
 
         for (int i = 0; i < numero.length(); i++) {
             String bit = "" + numero.charAt(i);

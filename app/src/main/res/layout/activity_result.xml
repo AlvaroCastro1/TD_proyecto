@@ -28,12 +28,12 @@ android:gravity="center"
 android:textColor="@color/black"
     android:fontFamily="@font/agbalumo"/>
 
-<com.example.td_proyecto.DrawingView
-android:id="@+id/drawingView"
-android:layout_width="match_parent"
-android:layout_height="143dp"
-android:background="@android:color/white"
-    android:layout_marginTop="19dp"/>
+        <com.example.td_proyecto.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="151dp"
+            android:layout_marginTop="19dp"
+            android:background="@android:color/white" />
 
 <TextView
 android:id="@+id/textView2"
