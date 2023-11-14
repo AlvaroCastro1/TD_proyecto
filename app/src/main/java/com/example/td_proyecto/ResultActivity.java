@@ -26,39 +26,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
-    private String Numero;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        verificarNumero();
+    }
 
+    private void verificarNumero() {
         String numero = getIntent().getStringExtra("enteredNumber");
+        String mensaje = "";
 
         if (numero.length() < 8) {
-            showValidationErrorDialog("Entrada inválida", "Asegúrate de ingresar más de 8 caracteres.");
+            mensaje = "Asegúrate de ingresar más de 8 caracteres.";
         } else if (numero.length() > 20) {
-            showValidationErrorDialog("Entrada inválida", "Asegúrate de ingresar menos de 20 caracteres.");
+            mensaje = "Asegúrate de ingresar menos de 20 caracteres.";
         } else if (!numero.matches("[01]+")) {
-            showValidationErrorDialog("Entrada inválida", "Asegúrate de ingresar solo 0s y 1s.");
+            mensaje = "Asegúrate de ingresar solo 0s y 1s.";
         } else {
             inicio();
+            return; // Evitar la visualización del Toast si se llama a inicio()
         }
-    }
 
-    private void showValidationErrorDialog(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title)
-                .setMessage(message)
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Cierra el cuadro de diálogo, el usuario permanece en la página actual.
-                        dialog.dismiss();
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        // Mostrar el Toast solo si no se llamó a inicio()
+        Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_LONG).show();
+        finish(); // Cierra la actividad si no se llama a inicio()
     }
-
     public int obtenerAnchoPantalla() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         Display display = getWindowManager().getDefaultDisplay();

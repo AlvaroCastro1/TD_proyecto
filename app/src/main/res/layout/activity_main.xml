@@ -22,6 +22,7 @@
             android:layout_y="24dp"
             android:digits="01"
             android:hint="Ingrese el número binario (1 o 0)"
+            android:maxLength="20"
             android:inputType="number" />
 
         <Button
