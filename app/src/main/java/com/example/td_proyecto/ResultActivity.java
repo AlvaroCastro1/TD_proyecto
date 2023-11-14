@@ -1,28 +1,12 @@
 package com.example.td_proyecto;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
-import android.os.Bundle;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -37,11 +21,11 @@ public class ResultActivity extends AppCompatActivity {
         String mensaje = "";
 
         if (numero.length() < 8) {
-            mensaje = "Asegúrate de ingresar más de 8 caracteres.";
+            mensaje = "Asegúrate de ingresar más de 8 bits.";
         } else if (numero.length() > 20) {
-            mensaje = "Asegúrate de ingresar menos de 20 caracteres.";
+            mensaje = "Asegúrate de ingresar menos de 20 bits.";
         } else if (!numero.matches("[01]+")) {
-            mensaje = "Asegúrate de ingresar solo 0s y 1s.";
+            mensaje = "Asegúrate de ingresar solo ceros y unos.";
         } else {
             inicio();
             return; // Evitar la visualización del Toast si se llama a inicio()
