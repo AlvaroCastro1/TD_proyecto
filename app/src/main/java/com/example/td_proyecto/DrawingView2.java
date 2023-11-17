@@ -42,11 +42,11 @@ public class DrawingView2 extends View {
         int largoLinea = calcular_largo();
         paint.setStrokeWidth(10);
 
-        int y = 60; // Comenzamos en la posición baja
+        int y = 60; // Comenzamos en la posición alta
         int prev_y = y;
         int prev_fin_x = 0;
 
-        paint.setColor(Color.argb(16,0,0,0));
+        paint.setColor(Color.argb(8,0,0,0));
         for (int i = 0; i < getWidth(); i += largoLinea) {
             canvas.drawLine(i, 0, i, getHeight(), paint);
         }
